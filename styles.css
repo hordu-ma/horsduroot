@@ -626,18 +626,14 @@ p {
 .product-float {
   border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow: 0 34px 90px rgba(0, 0, 0, 0.36);
-  object-fit: contain;
-  object-position: top;
 }
 
 .product-main {
-  aspect-ratio: 1.04 / 1;
   width: 100%;
 }
 
 .product-float {
   align-self: end;
-  aspect-ratio: 0.74 / 1;
   margin-left: -64px;
   margin-bottom: -34px;
   width: 100%;
