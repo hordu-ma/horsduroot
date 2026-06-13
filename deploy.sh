@@ -14,7 +14,7 @@ echo "▶ 目标服务器: $SSH_HOST  站点: $SITE_HOST"
 if [[ -z "${WEBROOT:-}" ]]; then
   echo "▶ 探测 nginx 根目录…"
   WEBROOT="$(ssh "$SSH_HOST" "nginx -T 2>/dev/null | awk '/server_name/{s=\$0} /root /{print s\" || \"\$0}'" \
-    | grep -i horsduroot | grep -oE 'root[[:space:]]+[^;]+' | head -1 | awk '{print $2}')" || true
+    | grep -i horsduroot | grep -v certbot | grep -oE 'root[[:space:]]+[^;]+' | head -1 | awk '{print $2}')" || true
 fi
 
 if [[ -z "${WEBROOT:-}" ]]; then
