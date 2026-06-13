@@ -646,11 +646,11 @@ p {
 }
 
 .product-main {
-  aspect-ratio: 1400 / 964;
+  aspect-ratio: 1440 / 992;
 }
 
 .product-float {
-  aspect-ratio: 866 / 1400;
+  aspect-ratio: 1440 / 2327;
 }
 
 .inspection-stage {
@@ -805,8 +805,7 @@ p {
 }
 
 @media (max-width: 1020px) {
-  .desktop-nav,
-  .nav-action {
+  .desktop-nav {
     display: none;
   }
 
@@ -842,10 +841,14 @@ p {
 
   .brand {
     font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .brand-mark {
     border-radius: 10px;
+    flex: 0 0 auto;
     height: 30px;
     width: 30px;
   }
@@ -910,7 +913,9 @@ p {
   }
 
   .inspection-stage img {
-    height: 280px;
+    height: auto;
+    max-height: 340px;
+    object-fit: contain;
   }
 
   .site-footer {
