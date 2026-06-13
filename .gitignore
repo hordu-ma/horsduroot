@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# 编辑器/工具本地配置
+.claude/
+
+# 原始大图备份（不纳入仓库与部署）
+assets_orig/
+
+# 开发参考截图（非站点资源）
+company-homepage-full-screenshot.png
+company-homepage-screenshot.png
