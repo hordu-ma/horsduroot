@@ -26,8 +26,8 @@ echo "▶ 网站根目录: $WEBROOT"
 # 2) 同步（优先 rsync，回退 scp），排除开发/非站点文件
 EXCLUDES=(
   --exclude ".git" --exclude ".gitignore" --exclude ".DS_Store"
-  --exclude "assets_orig" --exclude "deploy.sh" --exclude "README.md"
-  --exclude "company-homepage-*.png"
+  --exclude ".claude" --exclude "assets_orig" --exclude "deploy.sh"
+  --exclude "README.md" --exclude "company-homepage-*.png"
 )
 
 if command -v rsync >/dev/null 2>&1; then
