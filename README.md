@@ -28,15 +28,27 @@ python3 -m http.server 8080
 
 ## 部署
 
-线上托管在阿里云 ECS（nginx），站点根目录由 nginx `root` 指向。
-使用仓库自带脚本同步发布（需在白名单网络内、且本地配置好 SSH host `wuhao-tutor-ecs`）：
+线上托管在阿里云 ECS（nginx），站点根目录 `/var/www/horsduroot`。SSH host
+`wuhao-tutor-ecs` 走 **2222** 端口（见 `~/.ssh/config`）。两种发布方式：
 
 ```bash
+# 方式一：从本机用 rsync 同步（推荐）
 ./deploy.sh
+
+# 方式二：在服务器本机从 GitHub 拉取发布（如本机 SSH 不通时）
+#   见 server-deploy.sh，但该脚本仅供服务器端运行，
+#   不会被同步进 web 根目录（deploy.sh 与 nginx 均已排除/拒绝）。
 ```
 
-脚本通过 `rsync` 把站点文件同步到服务器 web 根目录，排除开发文件。
+脚本通过 `rsync` 把站点文件同步到 web 根目录，排除开发文件（`.git`、
+`deploy.sh`、`server-deploy.sh`、`assets_orig/`、开发截图等）。
 若 rsync 不可用会回退到 `scp`。详见 [deploy.sh](deploy.sh)。
+
+### nginx 行为约定（`/etc/nginx/conf.d/horsduroot.conf`）
+
+- 裸域 `horsduroot.com` 与 HTTP 全部 `301` 跳转到 `https://www.horsduroot.com`（规范化、避免重复内容）。
+- 单页静态站：不存在的路径返回真正的 `404`，不回退首页（避免软 404）。
+- 静态资源缓存 30 天；`.sh` 与点文件（`/.`）一律拒绝下载。
 
 ## 资源优化约定
 

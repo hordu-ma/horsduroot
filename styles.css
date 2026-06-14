@@ -138,6 +138,7 @@ button {
 .nav-action {
   border: 1px solid rgba(6, 16, 20, 0.22);
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .nav-toggle {
@@ -640,17 +641,10 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow: 0 34px 90px rgba(0, 0, 0, 0.36);
   display: block;
-  object-fit: cover;
-  object-position: top;
+  /* 按自然比例完整显示，不裁切：height:auto 让宽度驱动高度，
+     否则 HTML 的 height 属性会锁死盒子高度、使图片被 object-fit 裁掉。 */
+  height: auto;
   width: 100%;
-}
-
-.product-main {
-  aspect-ratio: 1440 / 992;
-}
-
-.product-float {
-  aspect-ratio: 1440 / 2327;
 }
 
 .inspection-stage {
@@ -851,6 +845,12 @@ p {
     flex: 0 0 auto;
     height: 30px;
     width: 30px;
+  }
+
+  .nav-action {
+    font-size: 13px;
+    min-height: 40px;
+    padding: 0 14px;
   }
 
   .mobile-nav {

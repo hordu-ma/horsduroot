@@ -27,6 +27,7 @@ echo "▶ 网站根目录: $WEBROOT"
 EXCLUDES=(
   --exclude ".git" --exclude ".gitignore" --exclude ".DS_Store"
   --exclude ".claude" --exclude "assets_orig" --exclude "deploy.sh"
+  --exclude "server-deploy.sh"
   --exclude "README.md" --exclude "company-homepage-*.png"
 )
 
