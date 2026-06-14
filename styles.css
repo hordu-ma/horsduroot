@@ -306,212 +306,134 @@ h3 {
 
 .hero-visual {
   align-self: center;
-  min-height: 560px;
 }
 
-.visual-plane {
-  background: linear-gradient(145deg, rgba(6, 16, 20, 0.96), rgba(11, 34, 42, 0.94));
+/* Hero 右侧：私有化部署架构卡（取自真实交付项目的部署结构） */
+.hero-arch {
+  background: linear-gradient(160deg, rgba(6, 16, 20, 0.97), rgba(11, 27, 34, 0.95));
   border: 1px solid rgba(7, 224, 196, 0.28);
-  box-shadow: 0 34px 90px rgba(21, 56, 84, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 34px 90px rgba(21, 56, 84, 0.22);
   color: #eafffb;
   margin-left: auto;
-  min-height: 330px;
   padding: 22px;
-  position: relative;
-  width: min(92%, 620px);
+  width: min(100%, 560px);
 }
 
-.console-bar {
+.arch-head {
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
-  gap: 8px;
-  padding-bottom: 18px;
-}
-
-.console-bar span {
-  background: var(--cyan);
-  border-radius: 50%;
-  height: 9px;
-  opacity: 0.75;
-  width: 9px;
-}
-
-.console-bar strong {
-  font-size: 12px;
-  margin-left: auto;
-  opacity: 0.75;
-}
-
-.console-body {
-  display: grid;
-  gap: 18px;
-  padding-top: 26px;
-}
-
-.metric-line {
-  align-items: center;
-  display: flex;
+  gap: 12px;
   justify-content: space-between;
+  padding-bottom: 16px;
 }
 
-.metric-line span {
-  color: rgba(234, 255, 251, 0.62);
+.arch-head strong {
+  font-size: 16px;
+  font-weight: 800;
 }
 
-.metric-line strong {
-  color: var(--lime);
-}
-
-.signal-stack {
-  display: grid;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.signal-stack i {
-  background: linear-gradient(90deg, var(--cyan), transparent);
-  display: block;
-  height: 10px;
-}
-
-.signal-stack i:nth-child(2) { width: 72%; }
-.signal-stack i:nth-child(3) { width: 88%; }
-.signal-stack i:nth-child(4) { width: 64%; }
-.signal-stack i:nth-child(5) { width: 52%; }
-
-.deployment-visual {
-  background:
-    radial-gradient(circle at 50% 50%, rgba(7, 224, 196, 0.24), transparent 34%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.78), rgba(232, 244, 249, 0.58));
-  border: 1px solid rgba(6, 16, 20, 0.12);
-  box-shadow: 0 34px 90px rgba(21, 56, 84, 0.18);
-  height: 390px;
-  margin-top: -84px;
-  margin-left: 38px;
-  overflow: hidden;
-  position: relative;
-  width: min(82%, 560px);
-}
-
-.deployment-visual::before {
-  background:
-    linear-gradient(rgba(47, 117, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(47, 117, 255, 0.1) 1px, transparent 1px);
-  background-size: 34px 34px;
-  content: "";
-  inset: 0;
-  opacity: 0.72;
-  position: absolute;
-}
-
-.deployment-visual::after {
-  border: 1px solid rgba(7, 224, 196, 0.42);
-  content: "";
-  height: 220px;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  width: 220px;
-}
-
-.deploy-node {
+.arch-status {
   align-items: center;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(6, 16, 20, 0.12);
-  box-shadow: 0 18px 45px rgba(21, 56, 84, 0.14);
-  display: grid;
-  gap: 5px;
-  justify-items: center;
-  min-width: 118px;
-  padding: 16px;
-  position: absolute;
-  z-index: 2;
+  color: rgba(234, 255, 251, 0.7);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 12px;
+  gap: 7px;
 }
 
-.deploy-node span {
-  color: var(--blue);
-  font-size: 13px;
-  font-weight: 900;
-}
-
-.deploy-node strong {
-  font-size: 15px;
-}
-
-.deploy-node.core {
-  background: var(--deep);
-  color: #f4fffb;
-  left: 50%;
-  min-height: 128px;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 154px;
-}
-
-.deploy-node.core span {
-  align-items: center;
+.arch-status i {
   background: var(--cyan);
   border-radius: 50%;
-  color: var(--ink);
-  display: inline-flex;
-  font-size: 22px;
-  height: 56px;
-  justify-content: center;
-  width: 56px;
+  box-shadow: 0 0 0 4px rgba(7, 224, 196, 0.18);
+  height: 8px;
+  width: 8px;
 }
 
-.deploy-node.compute {
-  left: 38px;
-  top: 44px;
+.arch-flow {
+  display: grid;
+  padding-top: 20px;
 }
 
-.deploy-node.data {
-  bottom: 44px;
-  left: 54px;
+.arch-node,
+.arch-layer {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 14px 16px;
 }
 
-.deploy-node.app {
-  right: 44px;
-  top: 118px;
+.arch-node {
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.link {
-  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+.arch-node strong {
   display: block;
-  height: 2px;
-  opacity: 0.92;
-  position: absolute;
-  transform-origin: left center;
-  z-index: 1;
+  font-size: 15px;
+  margin-top: 4px;
 }
 
-.link.l1 {
-  left: 154px;
-  top: 104px;
-  transform: rotate(25deg);
-  width: 180px;
+.arch-kicker {
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
 }
 
-.link.l2 {
-  left: 168px;
-  top: 285px;
-  transform: rotate(-29deg);
-  width: 170px;
+.arch-layer.core {
+  background: rgba(7, 224, 196, 0.08);
+  border-color: rgba(7, 224, 196, 0.34);
 }
 
-.link.l3 {
-  left: 315px;
-  top: 191px;
-  width: 170px;
+.arch-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
 }
 
-.link.l4 {
-  left: 244px;
-  top: 193px;
-  transform: rotate(90deg);
-  width: 120px;
+.arch-chips span {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 12px;
+}
+
+.arch-chips span.hot {
+  background: var(--lime);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.arch-link {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  min-height: 30px;
+  padding-left: 18px;
+}
+
+.arch-link::before {
+  background: linear-gradient(var(--cyan), rgba(7, 224, 196, 0.12));
+  content: "";
+  height: 18px;
+  width: 2px;
+}
+
+.arch-link span {
+  color: rgba(234, 255, 251, 0.55);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.arch-foot {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(234, 255, 251, 0.66);
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 18px;
+  padding-top: 16px;
 }
 
 section {
@@ -865,31 +787,8 @@ p {
     width: 100%;
   }
 
-  .deployment-visual {
-    height: 330px;
-    margin-left: 0;
-    margin-top: -36px;
-    width: 100%;
-  }
-
-  .deploy-node {
-    min-width: 96px;
-    padding: 12px;
-  }
-
-  .deploy-node.compute {
-    left: 16px;
-    top: 34px;
-  }
-
-  .deploy-node.data {
-    bottom: 34px;
-    left: 20px;
-  }
-
-  .deploy-node.app {
-    right: 18px;
-    top: 108px;
+  .hero-arch {
+    margin-top: 8px;
   }
 
   section {

@@ -114,53 +114,37 @@
             <a class="secondary-button" href="#local-ai">查看三大方向</a>
           </div>
         </div>
-        <div class="hero-visual reveal" aria-label="私有化 AI 系统展示">
-          <div class="visual-plane">
-            <div class="console-bar">
-              <span></span>
-              <span></span>
-              <span></span>
-              <strong>PRIVATE AI OPERATIONS</strong>
+        <div class="hero-visual reveal" aria-label="私有化本地大模型部署架构示意">
+          <div class="hero-arch">
+            <div class="arch-head">
+              <strong>私有化部署架构</strong>
+              <span class="arch-status"><i aria-hidden="true"></i>内网运行</span>
             </div>
-            <div class="console-body">
-              <div class="metric-line">
-                <span>Local Model</span>
-                <strong>Ready</strong>
+            <div class="arch-flow">
+              <div class="arch-node">
+                <span class="arch-kicker">用户侧</span>
+                <strong>医生 / 学员浏览器</strong>
               </div>
-              <div class="metric-line">
-                <span>Data Boundary</span>
-                <strong>Private</strong>
+              <div class="arch-link"><span>HTTPS</span></div>
+              <div class="arch-layer">
+                <span class="arch-kicker">入口层 · A 服务器</span>
+                <div class="arch-chips">
+                  <span>Nginx 反向代理</span>
+                  <span>前端 Vue 3</span>
+                </div>
               </div>
-              <div class="metric-line">
-                <span>Domain Agents</span>
-                <strong>Online</strong>
+              <div class="arch-link"><span>内网 /api/</span></div>
+              <div class="arch-layer core">
+                <span class="arch-kicker">核心层 · B 服务器（GPU）</span>
+                <div class="arch-chips">
+                  <span class="hot">vLLM 私有大模型</span>
+                  <span>FastAPI 后端</span>
+                  <span>PostgreSQL</span>
+                  <span>MinIO 对象存储</span>
+                </div>
               </div>
-              <div class="signal-stack" aria-hidden="true">
-                <i></i><i></i><i></i><i></i><i></i>
-              </div>
             </div>
-          </div>
-          <div class="deployment-visual" aria-label="本地大模型部署视觉示意">
-            <div class="deploy-node core">
-              <span>AI</span>
-              <strong>Local Model</strong>
-            </div>
-            <div class="deploy-node compute">
-              <span>GPU</span>
-              <strong>Compute</strong>
-            </div>
-            <div class="deploy-node data">
-              <span>NAS</span>
-              <strong>Private Data</strong>
-            </div>
-            <div class="deploy-node app">
-              <span>APP</span>
-              <strong>Domain Agents</strong>
-            </div>
-            <i class="link l1"></i>
-            <i class="link l2"></i>
-            <i class="link l3"></i>
-            <i class="link l4"></i>
+            <div class="arch-foot">数据全程在内网 · 真实案例：某三甲医院临床模拟问诊系统</div>
           </div>
         </div>
       </section>
