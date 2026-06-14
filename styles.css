@@ -619,20 +619,15 @@ p {
 
 .product-scene {
   align-self: center;
-  align-items: end;
+  align-items: start;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(180px, 0.58fr);
+  gap: clamp(16px, 2.4vw, 36px);
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 0.62fr);
 }
 
 .product-scene picture {
   display: block;
   min-width: 0;
-}
-
-.product-scene picture:last-child {
-  align-self: end;
-  margin-left: -64px;
-  margin-bottom: -34px;
 }
 
 .product-main,
