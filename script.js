@@ -11,22 +11,26 @@ function updateHeader() {
 window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in-view");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.16 }
-);
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.16 }
+  );
 
-revealItems.forEach((item, index) => {
-  item.style.transitionDelay = `${Math.min(index * 40, 180)}ms`;
-  revealObserver.observe(item);
-});
+  revealItems.forEach((item, index) => {
+    item.style.transitionDelay = `${Math.min(index * 40, 180)}ms`;
+    revealObserver.observe(item);
+  });
+} else {
+  revealItems.forEach((item) => item.classList.add("in-view"));
+}
 
 // 移动端导航汉堡菜单
 if (navToggle && mobileNav) {
@@ -57,7 +61,7 @@ if (navToggle && mobileNav) {
     if (event.key === "Escape") closeNav();
   });
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 1020) closeNav();
+    if (window.innerWidth > 1120) closeNav();
   });
 }
 
