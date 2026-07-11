@@ -36,7 +36,7 @@ python3 -m http.server 8080
 ## 部署
 
 线上托管在阿里云 ECS（nginx），站点根目录 `/var/www/horsduroot`。SSH host
-`wuhao-tutor-ecs` 走 **2222** 端口（见 `~/.ssh/config`）。两种发布方式：
+`wuhao-tutor-ecs` 走 **22** 端口（见 `~/.ssh/config`）。两种发布方式：
 
 ```bash
 # 方式一：从本机用 rsync 同步（推荐）
